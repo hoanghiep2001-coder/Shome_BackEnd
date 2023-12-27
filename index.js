@@ -26,6 +26,10 @@ app.post("/createUserAccount", async (req, res) => {
     res.json(user);
 })
 
+app.get("/", (req, res) => {
+    res.json("Hello")
+})
+
 app.listen(3001, () => {
     console.log("sever is running");
 })
