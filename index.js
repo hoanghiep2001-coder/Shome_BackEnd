@@ -7,8 +7,9 @@ const app = express();
 app.use(cors(
     {
         origin: ["https://shome.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
+        methods: ["POST", "GET", "PUT", "DELETE"],
+        credentials: true,
+        allowedHeaders: ["Content-Type", "Authorization"],
     }
 ));
 app.use(express.json());
