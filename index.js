@@ -6,7 +6,7 @@ const userAccountModel = require("./models/userAccounts");
 const app = express();
 app.use(cors(
     {
-        origin: ["https://shome.vercel.app"],
+        origin: ["https://shome.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
