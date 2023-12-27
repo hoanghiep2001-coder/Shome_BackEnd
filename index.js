@@ -14,13 +14,17 @@ app.use(cors(
 app.use(express.json());
 
 mongoose.connect(
-   "mongodb+srv://ytbduonghiep:S3Etaser1LkTPVcz@hiepduong.mudnqxm.mongodb.net/shome?retryWrites=true&w=majority"
+    "mongodb+srv://ytbduonghiep:S3Etaser1LkTPVcz@hiepduong.mudnqxm.mongodb.net/shome?retryWrites=true&w=majority"
 )
 
+app.get("/", (req, res) => {
+    res.json("Hello")
+})
+
 app.get("/getUserAccounts", (req, res) => {
-    userAccountModel.find({}).then(function(users) {
+    userAccountModel.find({}).then(function (users) {
         res.json(users)
-    }).catch(function(err) {
+    }).catch(function (err) {
         res.json(err)
     })
 })
@@ -32,9 +36,6 @@ app.post("/createUserAccount", async (req, res) => {
     res.json(user);
 })
 
-app.get("/", (req, res) => {
-    res.json("Hello")
-})
 
 app.listen(3001, () => {
     console.log("sever is running");
