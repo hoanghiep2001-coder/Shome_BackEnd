@@ -4,7 +4,13 @@ const cors = require('cors');
 const userAccountModel = require("./models/userAccounts");
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://shome.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json());
 
 mongoose.connect(
